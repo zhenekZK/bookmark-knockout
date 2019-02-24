@@ -1,0 +1,75 @@
+@import (less) "bootstrap.min.css";
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.header > .title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #78c977;
+    color: #000;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+.bookmark-container {
+    & {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .bookmark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 50px;
+        max-width: 200px;
+        padding: 19px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-color: #b2dab1;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+    }
+
+    .bookmark > .title {
+      font-size: 25px;
+    }
+}
