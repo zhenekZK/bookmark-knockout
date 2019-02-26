@@ -10,42 +10,44 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header clearfix">
-            <nav>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
 
-            </nav>
-            <h3 class="title">Bookmarker</h3>
-        </div>
-
-        <div class="jumbotron">
-            <h2>Bookmark Your Favorite Sites</h2>
-            <form id="myForm">
-                <div class="form-group">
-                    <label>Site Name</label>
-                    <input type="text" data-bind="value: name" class="form-control" id="siteName" placeholder="Website Name">
-                </div>
-                <div class="form-group">
-                    <label>Site URL</label>
-                    <input type="text" data-bind="value: url" class="form-control" id="siteUrl" placeholder="Website URL">
-                </div>
-                <button type="submit" data-bind="click: saveBookmark, enable: formIsValid" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-
-        <div class="bookmark-container" data-bind="foreach: bookmarks">
-            <div class="bookmark">
-                <span class="title" data-bind="text: name"></span>
-                <a class="btn btn-default" target="_blank" data-bind="attr: { href: $root.addhttp($data) }">Visit</a>
-                <a class="btn btn-danger" href="#" data-bind="click: $root.deleteBookmark.bind($parent, $data)">Delete</a>
-            </div>
-        </div>
-
-        <footer class="footer">
-            <p>&copy; 2019 Bookmarker, Inc.</p>
-        </footer>
-
+        </nav>
+        <h3 class="title">Bookmarker</h3>
     </div>
+
+    <div class="jumbotron">
+        <h2>Bookmark Your Favorite Sites</h2>
+        <form id="myForm">
+            <div class="form-group">
+                <label>Site Name</label>
+                <input type="text" data-bind="value: name" class="form-control" id="siteName"
+                       placeholder="Website Name">
+            </div>
+            <div class="form-group">
+                <label>Site URL</label>
+                <input type="text" data-bind="value: url" class="form-control" id="siteUrl" placeholder="Website URL">
+            </div>
+            <button type="submit" data-bind="click: saveBookmark, enable: formIsValid" class="btn btn-primary">Submit
+            </button>
+        </form>
+    </div>
+
+    <div class="bookmark-container" data-bind="foreach: bookmarks">
+        <div class="bookmark">
+            <span class="title" data-bind="text: name"></span>
+            <a class="btn btn-default" target="_blank" data-bind="attr: { href: $root.addhttp($data) }">Visit</a>
+            <a class="btn btn-danger" href="#" data-bind="click: $root.deleteBookmark.bind($parent, $data)">Delete</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2019 Bookmarker, Inc.</p>
+    </footer>
+
+</div>
 <script src="index.js"></script>
 </body>
 </html>
