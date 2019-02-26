@@ -41,12 +41,18 @@ var ViewModel = function(bookmarks) {
         localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks()));
     };
 
-    function addhttp(bookmark) {
-        if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
-            url = `http://${url}`;
+    this.deleteBookmark = function (bookmark) {
+        this.bookmarks.remove(bookmark);
+    };
+
+    this.addhttp = function (bookmark) {
+        var correctUrl;
+
+        if (!/^(?:f|ht)tps?\:\/\//.test(bookmark.url)) {
+            correctUrl = `http://${bookmark.url}`;
         }
 
-    return url;
+    return correctUrl;
 }
 };
 

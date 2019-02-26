@@ -33,16 +33,16 @@
             </form>
         </div>
 
-        <div id="bookmarksResults" class="bookmark-container" data-bind="foreach: bookmarks">
+        <div class="bookmark-container" data-bind="foreach: bookmarks">
             <div class="bookmark">
                 <span class="title" data-bind="text: name"></span>
-                <a class="btn btn-default" target="_blank" data-bind="attr: { href: $parent.addhttp() }">Visit</a>
-                <a class="btn btn-danger" href="#">Delete</a>
+                <a class="btn btn-default" target="_blank" data-bind="attr: { href: $root.addhttp($data) }">Visit</a>
+                <a class="btn btn-danger" href="#" data-bind="click: $root.deleteBookmark.bind($parent, $data)">Delete</a>
             </div>
         </div>
 
         <footer class="footer">
-            <p>&copy; 2018 Bookmarker, Inc.</p>
+            <p>&copy; 2019 Bookmarker, Inc.</p>
         </footer>
 
     </div>
