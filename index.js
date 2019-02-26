@@ -1,8 +1,8 @@
 // Here's my data model
 
 var ViewModel = function (bookmarks) {
-    this.name = ko.observable();
-    this.url = ko.observable();
+    this.name = ko.observable('');
+    this.url = ko.observable('');
     this.bookmarks = ko.observableArray(bookmarks);
 
     this.saveBookmark = function () {
@@ -13,7 +13,6 @@ var ViewModel = function (bookmarks) {
         };
 
         this.bookmarks.push(bookmark);
-
         this.updateStorage();
         this.resetForm();
     };
