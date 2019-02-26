@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Site Bookmarker</title>
     <link href="build/css/main.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="index.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
 
+            </nav>
+            <h3 class="title">Bookmarker</h3>
+        </div>
 
-  </body>
+        <div class="jumbotron">
+            <h2>Bookmark Your Favorite Sites</h2>
+            <form id="myForm">
+                <div class="form-group">
+                    <label>Site Name</label>
+                    <input type="text" data-bind="value: name" class="form-control" id="siteName" placeholder="Website Name">
+                </div>
+                <div class="form-group">
+                    <label>Site URL</label>
+                    <input type="text" data-bind="value: url" class="form-control" id="siteUrl" placeholder="Website URL">
+                </div>
+                <button type="submit" data-bind="click: saveBookmark, enable: formIsValid" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div id="bookmarksResults" class="bookmark-container" data-bind="foreach: bookmarks">
+            <div class="bookmark">
+                <span class="title" data-bind="text: name"></span>
+                <a class="btn btn-default" target="_blank" data-bind="attr: { href: $parent.addhttp() }">Visit</a>
+                <a class="btn btn-danger" href="#">Delete</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2018 Bookmarker, Inc.</p>
+        </footer>
+
+    </div>
+<script src="index.js"></script>
+</body>
 </html>
