@@ -46,14 +46,14 @@ gulp.task('style:build', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('compile-less', function() {
-  gulp.src('./src/style/main.less')
-    .pipe(less())
-    .pipe(prefixer())
-    .pipe(gulp.dest('./build/css/'));
+gulp.task('compile-less', function () {
+    gulp.src('./src/style/main.less')
+        .pipe(less())
+        .pipe(prefixer())
+        .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('fonts:build', function() {
+gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
