@@ -23,12 +23,12 @@
         <form id="myForm">
             <div class="form-group" data-bind="css: { empty: name().length == 0 }">
                 <label>Site Name</label>
-                <input type="text" data-bind="value: name" class="form-control" id="siteName"
+                <input type="text" data-bind="textInput: name" class="form-control" id="siteName"
                        placeholder="Website Name">
             </div>
             <div class="form-group" data-bind="css: { empty: url().length == 0 }">
                 <label>Site URL</label>
-                <input type="text" data-bind="value: url" class="form-control" id="siteUrl" placeholder="Website URL">
+                <input type="text" data-bind="textInput: url" class="form-control" id="siteUrl" placeholder="Website URL">
             </div>
             <button type="submit" data-bind="click: saveBookmark, enable: formIsValid" class="btn btn-primary">Submit
             </button>
